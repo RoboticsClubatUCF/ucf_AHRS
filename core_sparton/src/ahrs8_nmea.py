@@ -184,7 +184,7 @@ if __name__ == '__main__':
         else:
             rospy.logerr("AHRS-8: Bad checksum, skipping dataset.")
             continue
-
+        imu_msg.header.stamp = rospy.Time.now()
         # Publish the current message.
         imu_pub.publish(imu_msg)
         
